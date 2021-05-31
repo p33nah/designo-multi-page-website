@@ -9,7 +9,7 @@ function App() {
     <div className="app">
         <Nav/>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/designo-multi-page-website">
             <Home/>
           </Route>
         </Switch>
