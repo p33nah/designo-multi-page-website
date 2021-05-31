@@ -1,0 +1,32 @@
+@import "../../scss/colors.scss";
+@import "../../scss/mixins.scss";
+
+.nav {
+  position: relative;
+  width: 100%;
+  @include flex(row, center, space-between);
+
+  &-logo {
+    img {
+      margin-top: 12px;
+      width: 12.25rem;
+      height: 1.688rem;
+    }
+  }
+
+  &-btn {
+    @include flex();
+  }
+
+  &-links {
+    @include flex();
+    li {
+      font-size: 0.875rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+  }
+}

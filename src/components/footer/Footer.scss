@@ -1,0 +1,109 @@
+@import "../../scss/colors.scss";
+@import "../../scss/mixins.scss";
+
+footer {
+  background-color: $black;
+  position: relative;
+}
+.footer {
+  background-color: inherit;
+  padding-top: 16rem;
+  @include flex(column, center, center);
+
+  @include media-min($sm) {
+    padding-top: 10rem;
+    display: grid;
+    align-items: flex-end;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "logo links links"
+      "address contact social";
+  }
+
+  &-logo {
+    position: relative;
+    width: 100%;
+    grid-area: logo;
+    @include flex();
+    @include media-min($sm) {
+      justify-content: flex-start;
+    }
+
+    img {
+      width: 12.25rem;
+      height: 1.688rem;
+    }
+  }
+  &-links-container {
+    grid-area: links;
+    justify-self: flex-end;
+  }
+  &-links {
+    @include flex(column, center, center);
+    @include media-min($sm) {
+      @include flex();
+    }
+    li {
+      font-size: 0.875rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      &:not(:last-child) {
+        @include media-min($sm) {
+          margin-bottom: 0;
+          margin-right: 2rem;
+        }
+        margin-bottom: 2rem;
+      }
+      a {
+        color: $white;
+      }
+    }
+  }
+
+  &-address,
+  &-contact,
+  &-social {
+    margin-bottom: 2.5rem;
+    @include media-min($sm) {
+      margin-bottom: 0;
+      padding: 2.188rem 0;
+      align-self: flex-start;
+      justify-self: flex-start;
+    }
+  }
+
+  &-address,
+  &-contact {
+    p:first-child {
+      font-weight: bold;
+    }
+    p {
+      color: $white;
+      opacity: 0.5;
+      text-align: center;
+      @include media-min($sm) {
+        text-align: start;
+      }
+    }
+  }
+  &-address {
+    grid-area: address;
+  }
+  &-contact {
+    grid-area: contact;
+  }
+  &-social {
+    grid-area: social;
+    @include flex();
+    @include media-min($sm) {
+      justify-self: flex-end;
+      align-self: flex-end;
+    }
+  }
+  &-icon {
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@import "../../scss/colors.scss";
+@import "../../scss/mixins.scss";
+
+.contact-card {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  &-content {
+    padding: 4rem 1.5rem;
+    color: $white;
+    border-radius: 1rem;
+    background-image: url("../../assets/shared/desktop/bg-pattern-call-to-action.svg");
+    background-color: $peach;
+    @include flex(column, center, center);
+    @include media-min($md) {
+      padding: 4rem 8rem;
+    }
+  }
+  &-title,
+  &-text {
+    text-align: center;
+    padding-bottom: 1.5rem;
+  }
+
+  &-title {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    letter-spacing: 0px;
+    padding-bottom: 1.5rem;
+    @include media-min($xs) {
+      max-width: 70%;
+      font-size: 2rem;
+      line-height: 2.5rem;
+      letter-spacing: 0px;
+    }
+  }
+
+  &-text {
+    line-height: 25px;
+    font-size: 0.938rem;
+    @include media-min($xs) {
+      max-width: 60%;
+      font-size: 1rem;
+    }
+  }
+
+  &-btn {
+    padding: 1.2rem 1.2rem;
+    background-color: $white;
+    color: $black;
+    border-radius: 0.5rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+}

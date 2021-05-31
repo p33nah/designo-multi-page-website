@@ -1,0 +1,112 @@
+@import "./mixins.scss";
+@import "./colors.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  letter-spacing: 2px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+p {
+  line-height: 1.625rem;
+  font-size: 1rem;
+}
+
+.container {
+  max-width: 69.438rem;
+  margin: 0 auto;
+
+  &-pt {
+    padding-top: 4rem;
+  }
+  &-pr {
+    padding-right: 1.5rem;
+  }
+  &-pb {
+    padding-bottom: 4rem;
+  }
+  &-pl {
+    padding-left: 1.5rem;
+  }
+  &-py {
+    padding-top: 2.188rem;
+    padding-bottom: 2.188rem;
+  }
+  &-px {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+  &-pall {
+    padding-top: 2.188rem;
+    padding-bottom: 2.188rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+
+    @include media-min($sm) {
+      padding-top: 2.438rem;
+      padding-bottom: 2.438rem;
+      padding-right: 2.438rem;
+      padding-left: 2.438rem;
+    }
+
+    @include media-min($lg) {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+      padding-right: 0rem;
+      padding-left: 0rem;
+    }
+  }
+}
+
+.hide-for-mobile {
+  @include media-max($sm) {
+    display: none;
+  }
+}
+.hide-for-desktop {
+  @include media-min($sm) {
+    display: none;
+  }
+}

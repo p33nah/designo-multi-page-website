@@ -1,0 +1,25 @@
+@import "../../../scss/mixins.scss";
+@import "../../../scss/colors.scss";
+
+.menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: $black;
+
+  &-links {
+    @include flex(column, flex-start, center);
+
+    li {
+      color: $white;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

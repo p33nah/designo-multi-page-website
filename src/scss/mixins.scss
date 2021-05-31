@@ -1,0 +1,24 @@
+@mixin flex($dir: row, $ai: center, $jc: center) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $ai;
+  justify-content: $jc;
+}
+
+//media queries
+$xs: "480px";
+$sm: "768px";
+$md: "900px";
+$lg: "1180px";
+$xl: "1280px";
+
+@mixin media-min($size) {
+  @media (min-width: $size) {
+    @content;
+  }
+}
+@mixin media-max($size) {
+  @media (max-width: $size) {
+    @content;
+  }
+}
